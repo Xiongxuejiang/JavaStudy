@@ -15,15 +15,17 @@
 <p>
 2、HaspMap扩容是怎样扩容的，为什么都是2的N次幂的大小？
 </P>
+
 ```
 每次 HashMap 在调用put()方法的时候，都会去判断 length 是不是超过极限值，如果超过了极限值，
 就会调用扩容方法。
-
 如果 length 为2 的次幂， 那么length-1 转化为二进制必定是111... 的形式，这样的话操作效率会非常快而且不会浪费空间
 ```
+
 <p>
 3、HashMap、HashTable 和ConcurrentHashMap 有什么区别？
 </p>
+
 ```
 1、HashMap 是非线程安全的，而 HashMap 和 ConcurrentHashMap 是非线程安全的；
 2、HashMap 是可以有键值为空（null）的存在，而HashTable 和 ConcurrentHashMap 有空会抛出空指针异常；
