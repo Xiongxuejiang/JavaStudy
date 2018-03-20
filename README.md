@@ -114,3 +114,46 @@ asm来实现的，这个asm就是一个java字节码操纵框架，它能用来�
 ```
 会出现问题
 ```
+13、@transactional注解在什么情况下会失效，为什么。
+```
+```
+# 框架篇
+1、简单的谈一下SpringMVC的工作流程？
+```
+1、用户发送请求到前端控制器DisPathcherServlet;
+2、DisPathcherServlet 收到请求调用HandleMapping 处理器映射器;
+3、处理器映射器找到具体的处理器，生成处理器及处理器拦截器一并返回给DisPathcherServlet;
+4、DisPathcherServlet 调用HandleAdapter 处理器适配器;
+5、HandleAdapter 经过适配找到具体的Controller ;
+6、Controller 执行完成返回ModelAndView ;
+7、HandleAdapter 将Controller 的执行结果返回给DisPathcherServlet;
+8、DisPathcherServlet 将ModelAndView 传给 ViewReslover 视图解释器;
+9、ViewReslover 解析返回具体的view ;
+10、DisPathcherServlet 根据view 进行渲染数据;
+11、DisPathcherServlet 响应用户;
+```
+2、Spring中用到的设计模式
+```
+简单工厂、工厂方法、单例模式、适配器、包装器、代理、观察者、策略、模板方法
+```
+3、Spring中IOC的作用与原理？对象创建的过程。
+```
+IOC--Inversion of Control控制反转。当某个角色需要另外一个角色协助的时候，在传统的程序设计过程中，
+通常由调用者来创建被调用者的实例对象。但在spring中创建被调用者的工作不再由调用者来完成，因此称为控制反转。
+创建被调用者的工作由spring来完成，然后注入调用者 直接使用。
+```
+4、Spring管理事务有几种方式？
+```
+有两种方式：
+1、编程式事务，在代码中硬编码。(不推荐使用);
+2、声明式事务，在配置文件中配置（推荐使用）.
+声明式事务又分为两种：
+a、基于XML的声明式事务;
+b、基于注解的声明式事务.
+```
+5、Spring中AOP的原理、好处？
+```
+原理：AOP是面向切面编程，是通过动态代理的方式为程序添加统一功能，集中解决一些公共问题。
+优点：1.各个步骤之间的良好隔离性耦合性大大降低
+      2.源代码无关性，再扩展功能的同时不对源码进行修改操作
+```
